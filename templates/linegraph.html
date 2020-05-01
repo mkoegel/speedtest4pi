@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Speedtest Chart</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+</head>
+<body>
+  <canvas id="testChart" class="chartjs" width="800" height="400"></canvas>
+  <script>
+    // Get the context of the canvas element we want to select
+    var ctx = document.getElementById("testChart").getContext("2d");
+
+    var timestamp = {{timestamp|safe}};
+    var ping = {{ping|safe}};
+    var upload = {{upload|safe}};
+    var download = {{download|safe}};
+
+
+    var data = {
+        labels: timestamp,
+        datasets: [
+            {
+                label: "Ping",
+                borderColor: 'red',
+                borderWidth: 1,
+                data: ping
+            },
+            {
+                label: "Upload",
+                borderColor: 'green',
+                borderWidth: 1,
+                data: upload
+            },
+            {
+                label: "Download",
+                borderColor: 'blue',
+                borderWidth: 1,
+                data: download
+            }
+        ]
+    };
+
+    var options = {color: ['red', 'blue', 'green']};
+    var myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: data
+    });
+  </script>
+</body>
+</html>
