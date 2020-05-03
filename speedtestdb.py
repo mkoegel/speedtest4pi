@@ -33,7 +33,9 @@ def create_test(conn, test):
     return cur.lastrowid
 
 def main():
-    database = r"speedtest.db"
+    path = os.path.dirname(os.path.abspath(__file__))
+    print(path)
+    database = rf"{path}/speedtest.db"
 
     response = subprocess.Popen('/usr/local/bin/speedtest-cli --simple', shell=True, stdout=subprocess.PIPE).stdout.read()
     response = response.decode('UTF-8')
