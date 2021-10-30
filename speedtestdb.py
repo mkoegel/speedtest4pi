@@ -37,22 +37,16 @@ def main():
     path = os.path.dirname(os.path.abspath(__file__))
     print(path)
     database = rf"{path}/speedtest.db"
+    MBits = 1024 ** 2 / 8
 
     response = subprocess.Popen('/usr/bin/speedtest -f json', shell=True, stdout=subprocess.PIPE).stdout.read()
     response = response.decode('UTF-8')
     print(response)
 
-    # regex = 'Ping:\s(?P<ping>\d*\.?\d*).*\s^Download:\s(?P<download>\d*\.?\d*).*\s^Upload:\s(?P<upload>\d*\.?\d*)'
-    # matches = re.search(regex, response, re.MULTILINE)
-    
-    # ping = matches.group("ping")
-    # download = matches.group("download")
-    # upload = matches.group("upload")
-
     data = json.loads(response, object_hook=lambda d: SimpleNamespace(**d))
     ping = data.ping.latency
-    download = data.download.bandwidth
-    upload = data.upload.bandwidth
+    download = data.download.bandwidth/MBits
+    upload = data.upload.bandwidth/MBits
     print(f"Ping: {ping}")
     print(f"Download: {download}")
     print(f"Upload: {upload}")
