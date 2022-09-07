@@ -1,4 +1,4 @@
-astroid==2.12.8
+astroid==2.12.9
 click==7.1.2
 Flask==1.1.4
 isort==4.3.21
@@ -10,7 +10,7 @@ mccabe==0.7.0
 numpy==1.23.2
 pandas==1.4.4
 Pillow==9.2.0
-pylint==2.15.0
+pylint==2.15.2
 python-dateutil==2.8.2
 pytz==2020.5
 qrcode==7.3.1
