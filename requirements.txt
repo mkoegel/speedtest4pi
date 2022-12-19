@@ -1,7 +1,7 @@
 astroid==2.12.13
 click==7.1.2
 Flask==1.1.4
-isort==4.3.21
+isort==5.11.3
 itsdangerous==1.1.0
 Jinja2==2.11.3
 lazy-object-proxy==1.8.0
