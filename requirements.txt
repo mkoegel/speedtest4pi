@@ -1,4 +1,4 @@
-astroid==2.15.4
+astroid==2.15.5
 click==7.1.2
 Flask==2.3.2
 isort==4.3.21
