@@ -2,7 +2,7 @@ astroid==2.15.8
 click==7.1.2
 Flask==2.3.3
 isort==4.3.21
-itsdangerous==1.1.0
+itsdangerous==2.1.2
 Jinja2==2.11.3
 lazy-object-proxy==1.9.0
 MarkupSafe==2.1.3
