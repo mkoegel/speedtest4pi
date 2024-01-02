@@ -9,7 +9,7 @@ MarkupSafe==2.1.3
 mccabe==0.7.0
 numpy==1.26.2
 pandas==1.5.3
-Pillow==10.1.0
+Pillow==10.2.0
 pylint==2.17.7
 python-dateutil==2.8.2
 pytz==2020.5
